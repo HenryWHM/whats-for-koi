@@ -1,6 +1,6 @@
 # What's for Dino
 
-**What's for Dino** is a cross platform application that provides users with the daily menu of the Goldstein Dining Hall. By default, it displays the current day's menu, and users can navigate to view menus for upcoming or past days. Additional features include filtering food options based on dietary restrictions and a dark mode for enhanced user experience.
+**What's for Dino** is a cross-platform application that provides users with the daily menu of the Goldstein Dining Hall. By default, it displays the current day's menu, and users can navigate to view menus for upcoming or past days. Additional features include filtering food options based on dietary restrictions and a dark mode for enhanced user experience.
 
 ## Features
 
@@ -53,8 +53,77 @@ To run **What's for Dino** locally using Flutter, follow these steps:
 
 ---
 
-*Note: Ensure that all necessary permissions are granted when running the application on a physical device.*
+## Adding New Term Menus
+
+To add new items to the application, follow these steps:
+
+### 1. Create a New File for the Term
+
+1. Navigate to the `lib` folder of the project.
+2. Create a new file for the upcoming term, using the naming convention `YEAR_SemX.dart` (e.g., `2024_Sem4.dart`).
+3. Use the following template to define the menu for each day of the week:
+
+```dart
+import 'classes.dart';
+
+final mondayW1 = [
+    FoodItem(text: 'Sample food item', veg: true, gluten_free: true, breakfast: true),
+    // Add more FoodItem objects here
+];
+
+final tuesdayW1 = [
+    FoodItem(text: 'Sample food item', veg: true, gluten_free: true, lunch: true),
+    // Add more FoodItem objects here
+];
+
+// Repeat for other days
+
+final Week week_1 = Week(mondayW1, tuesdayW1, wednesdayW1, thursdayW1, fridayW1, saturdayW1, sundayW1);
+final Week week_2 = Week(mondayW2, tuesdayW2, wednesdayW2, thursdayW2, fridayW2, saturdayW2, sundayW2);
+final Week week_3 = Week(mondayW3, tuesdayW3, wednesdayW3, thursdayW3, fridayW3, saturdayW3, sundayW3);
+
+final Term term_x = Term(week_1, week_2, week_3);
+```
+
+### 2. Update Constants in `main.dart`
+
+1. Open the `main.dart` file.
+2. Update the following constants with the details of the new term:
+
+```dart
+final START_DATE = DateTime.utc(2024, 9, 10); // Update with the start date of the term (NOTE: American date formats are used YYYY/MM/DD)
+final MID_DATE   = DateTime.utc(2025, 1, 15); // Update with the end date of the first menu
+final FINAL_DATE = DateTime.utc(2025, 5, 20); // Update with the end date of the second menu
+
+final Term FIRST_TERM = term_x; // Replace `term_x` with the new term variable
+final Term SECOND_TERM = term_y; // If applicable, replace `term_y` with another term or reuse `term_x`
+
+final int FIRST_TERM_START_WEEK = 1; // Update if the menu starts at a different week on the cycle
+final int SECOND_TERM_START_WEEK = 1; // Update if applicable
+```
+
+### 3. Test the Changes
+
+1. Run the app locally using `flutter run`.
+2. Verify that the new term and menu items are displayed correctly.
+
+### 4. Deploy the Application
+
+1. **Build for Android**:
+   ```bash
+   flutter build apk
+   ```
+2. **Build for iOS**:
+   ```bash
+   flutter build ios
+   ```
+3. **Build for Web**:
+   ```bash
+   flutter build web
+   ```
+
+Follow Flutter's official documentation for additional instructions on deployment.
 
 ---
 
-*This README provides the necessary steps to set up and run the **What's for Dino** application locally using Flutter.* 
+*Note: Ensure that all necessary permissions are granted when running the application on a physical device.*
