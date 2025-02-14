@@ -330,12 +330,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: page_controller,
                 onPageChanged: (new_page) {
                   if (new_page < old_page) {
-                    DateTextController = DateTime(DateTextController.year,
+                    final new_date = DateTime(DateTextController.year,
                         DateTextController.month, DateTextController.day - 1);
+                    DateTextController = DateTime.utc(new_date.year, new_date.month, new_date.day);
                   }
                   if (new_page > old_page) {
-                    DateTextController = DateTime(DateTextController.year,
+                    final new_date = DateTime(DateTextController.year,
                         DateTextController.month, DateTextController.day + 1);
+                    DateTextController = DateTime.utc(new_date.year, new_date.month, new_date.day);
                   }
                   Format_Date();
                   old_page = new_page;
