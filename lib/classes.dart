@@ -1,9 +1,11 @@
 class FoodItem {
   String text;
   bool veg;
+  bool vegan;
   bool low_gluten;
   bool gluten_free;
   bool dairy_free;
+  bool soy;
   bool breakfast;
   bool brunch;
   bool lunch;
@@ -13,7 +15,7 @@ class FoodItem {
   bool subtitle;
   bool override;
 
-  FoodItem({this.text = "", this.veg = false, this.low_gluten = false, this.gluten_free = false, this.dairy_free = false, this.breakfast = false, this.brunch = false, this.lunch = false, this.dinner = false, this.dessert = false, this.title = false,this.subtitle = false, this.override = false});
+  FoodItem({this.text = "", this.veg = false, this.vegan = false, this.low_gluten = false, this.gluten_free = false, this.dairy_free = false, this.soy = false, this.breakfast = false, this.brunch = false, this.lunch = false, this.dinner = false, this.dessert = false, this.title = false,this.subtitle = false, this.override = false});
 }
 
 class Week {
