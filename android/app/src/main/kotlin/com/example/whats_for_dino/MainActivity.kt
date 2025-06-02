@@ -1,4 +1,4 @@
-package com.whatsfordino.whats_for_dino
+package com.whatsfordino.app
 
 import io.flutter.embedding.android.FlutterActivity
 
