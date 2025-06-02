@@ -122,6 +122,16 @@ final int SECOND_TERM_START_WEEK = 1; // Update if applicable
    flutter build web
    ```
 
+### Bonus: Update App Icon
+
+1. Update the icon location in `pubspec.yaml`.
+2. Run the following commands:
+
+```bash
+flutter pub get
+dart run flutter_launcher_icons
+```
+
 Follow Flutter's official documentation for additional instructions on deployment.
 
 ---
