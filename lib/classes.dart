@@ -1,19 +1,19 @@
 class FoodItem {
   String text;
-  bool veg;
-  bool vegan;
-  bool low_gluten;
-  bool gluten_free;
-  bool dairy_free;
-  bool soy;
-  bool breakfast;
-  bool brunch;
-  bool lunch;
-  bool dinner;
-  bool dessert;
-  bool title;
-  bool subtitle;
-  bool override;
+  bool veg; // Mark when food is explicitly indicated as vegetarian or can be obviously assumed as vegetarian
+  bool vegan; // Unused
+  bool low_gluten; // Mark when food is explicitly indicated as low gluten
+  bool gluten_free; // Mark when food is explicitly indicated as gluten free
+  bool dairy_free; // Mark when food is explicitly indicated as dairy free
+  bool soy; // Unused
+  bool breakfast; // Mark when food is in the breakfast section
+  bool brunch; // Mark when food is in the brunch section, this is only on weekends
+  bool lunch; // Mark when food is in the lunch section
+  bool dinner; // Mark when food is in the dinner section
+  bool dessert; // Mark when food is in the dessert section or if there is no dessert section then it is usually the desert type item at the last position in the dinner menu. Do not mark this item as dinner, only dessert.
+  bool title; // Names of special nights or days (Hot Breakfast, Pizza Night etc)
+  bool subtitle; // Additional information related to the title
+  bool override; // Used for cases when a food is broad and would include options across deitary restrictions and thus should be filtered. Examples include the sandwich bar as it is DIY.
 
   FoodItem({this.text = "", this.veg = false, this.vegan = false, this.low_gluten = false, this.gluten_free = false, this.dairy_free = false, this.soy = false, this.breakfast = false, this.brunch = false, this.lunch = false, this.dinner = false, this.dessert = false, this.title = false,this.subtitle = false, this.override = false});
 }
