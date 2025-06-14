@@ -1,5 +1,5 @@
-name: whats_for_dino
-description: A new Flutter project.
+name: whats_for_koi
+description: A forked Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -44,12 +44,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   # flutter_lints: ^2.0.1
-  flutter_launcher_icons: ^0.14.3 
+  flutter_launcher_icons: ^0.14.3
 
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/icon/icon.png"
+  image_path: "assets/icon/whats-for-koi-icon.jpg"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
