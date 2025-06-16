@@ -3,7 +3,7 @@ import 'classes.dart';
 final mondayGHW1S2 = [
     // Breakfast
     FoodItem(text: 'Selection of cereals & gluten free cereal', breakfast: true),
-    FoodItem(text: 'Fresh seasonal fruit salad & whole fruits', breakfast: true, gluten_free: true, dairy_free: true),
+    FoodItem(text: 'Fresh seasonal fruit salad & whole fruits', breakfast: true),
     FoodItem(text: 'Natural & flavoured yoghurt with accompaniments', breakfast: true),
     FoodItem(text: 'Chia seed pudding', breakfast: true),
     FoodItem(text: 'Hot Breakfast :', title: true, breakfast: true),
@@ -55,7 +55,7 @@ final tuesdayGHW1S2 = [
 final wednesdayGHW1S2 = [
     // Breakfast
     FoodItem(text: 'Selection of cereals & gluten free cereal', breakfast: true),
-    FoodItem(text: 'Fresh seasonal fruit salad & whole fruits', breakfast: true, gluten_free: true, dairy_free: true),
+    FoodItem(text: 'Fresh seasonal fruit salad & whole fruits', breakfast: true),
     FoodItem(text: 'Natural & flavoured yoghurt with accompaniments', breakfast: true),
     FoodItem(text: 'Chia seed pudding', breakfast: true),
     FoodItem(text: 'Hot Breakfast :', title: true, breakfast: true),
@@ -66,11 +66,11 @@ final wednesdayGHW1S2 = [
     FoodItem(text: 'Teriyaki chicken, Gyudon Beef, Soy Grazed Agedeshi Tofu.', override: true, lunch: true, soy: true),
     FoodItem(text: 'Brown Rice or Shoyu noodles, Tuna, Edamame,Steamed Broccoli, Lettuce, Nori, Diced Tomato, Diced Cucumber, kimchi', override: true, lunch: true),
     FoodItem(text: 'Roasted Pumpkin, Diced Beetroot, Pickled Radish, Pickled Ginger, Roasted Sesame Dressing.', override: true, lunch: true),
-    FoodItem(text: 'Miso Soup', lunch: true, soy: true),
+    FoodItem(text: 'Miso Soup', lunch: true),
     // Dinner
     FoodItem(text: 'Baked fish with butter, lemon sauce & caper', dinner: true),
     FoodItem(text: 'Italian Meatball in Napolitana', dinner: true),
-    FoodItem(text: 'Vegan Malai kofta', dinner: true, vegan: true),
+    FoodItem(text: 'Vegan Malai kofta', dinner: true),
     FoodItem(text: 'Selection of Lemon pepper roasted Potato, assorted vegetables & Steamed jasmine rice', dinner: true),
     FoodItem(text: 'Pesto pasta salad with spinach, charred capsicums, sundried tomato, and Basil with vegan pesto cream dressing', dinner: true, vegan: true),
     FoodItem(text: 'Panzanella bread salad with tomato, basil, onion, capsicum and Balsamic dressing', dinner: true),
