@@ -1,4 +1,4 @@
-import 'classes.dart';
+import '../classes.dart';
 
 final mondayW1 = [
   FoodItem(text: 'Selection of cereals & gluten free cereal', gluten_free: true, veg: true, breakfast: true),

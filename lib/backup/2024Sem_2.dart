@@ -1,4 +1,4 @@
-import 'classes.dart';
+import '../classes.dart';
 
 final mondayW1 = [
   // Breakfast
