@@ -135,7 +135,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             return MaterialPageRoute(
                 settings: settings,
                 builder: (context) => MyHomePage(
-                    title: 'What\'s for Dino',
+                    title: 'What\'s for Koi',
                     ChangeDarkMode: Update_App_State));
           case '/settings':
             final Function ChangeDarkMode = settings.arguments as Function;
