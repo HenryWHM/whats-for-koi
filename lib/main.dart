@@ -4,40 +4,32 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/foundation.dart';
-import 'package:whats_for_dino/2025Sem_1.dart';
-import 'package:whats_for_dino/2025Sem_2.dart';
+import 'package:whats_for_koi/2025Term_2.dart';
 import 'classes.dart';
-import 'backup/2023Sem_2.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 // Constants
-final START_DATE = DateTime.utc(2025, 2, 10); // Start date of current term
-final MID_DATE   = DateTime.utc(2025, 6, 1); // End of first menu, 1 day before start of new menu
+final START_DATE = DateTime.utc(2025, 6, 2); // Start date of current term
+final MID_DATE = DateTime.utc(2025, 6, 1); // End of first menu, 1 day before start of new menu
 final FINAL_DATE = DateTime.utc(2025, 9, 14); // Date end of second menu
 
-final Term FIRST_TERM = term_1_2025;
 final Term SECOND_TERM = term_2_2025;
 
-final int FIRST_TERM_START_WEEK = 1;
-final int SECOND_TERM_START_WEEK = 1;
+const int SECOND_TERM_START_WEEK = 1;
 
 // Settings Variables
 bool loading = true;
 bool setting_veg = false;
-bool setting_dairy_allergy = false;
-bool setting_gluten_allergy = false;
-
 bool setting_dark_mode = false;
-bool setting_hide_dietary_tags = false;
 
 // Print the date nicely
 Format_Date() {
-  DateTime date_time_today = DateTime.now();
-  DateTime date_today = DateTime.utc(
-      date_time_today.year, date_time_today.month, date_time_today.day);
-  if (date_today.difference(DateTextController).inDays == 0) {
-    String formatted_date = dateFormatter.format(DateTextController);
-    DateTextControllerFormatted = "$formatted_date (Today)";
+  DateTime dateTimeToday = DateTime.now();
+  DateTime dateToday = DateTime.utc(
+      dateTimeToday.year, dateTimeToday.month, dateTimeToday.day);
+  if (dateToday.difference(DateTextController).inDays == 0) {
+    String formattedDate = dateFormatter.format(DateTextController);
+    DateTextControllerFormatted = "$formattedDate (Today)";
   } else {
     DateTextControllerFormatted = dateFormatter.format(DateTextController);
   }
@@ -46,19 +38,13 @@ Format_Date() {
 Load_settings() async {
   final prefs = await SharedPreferences.getInstance();
   setting_veg = prefs.getBool('Vegetarian') ?? false;
-  setting_dairy_allergy = prefs.getBool('Dairy_Allergy') ?? false;
-  setting_gluten_allergy = prefs.getBool('Gluten_Allergy') ?? false;
   setting_dark_mode = prefs.getBool('Dark_Mode') ?? false;
-  setting_hide_dietary_tags = prefs.getBool('Hide_Dietary_Tags') ?? false;
 }
 
 Update_settings() async {
   final prefs = await SharedPreferences.getInstance();
   await prefs.setBool('Vegetarian', setting_veg);
-  await prefs.setBool('Dairy_Allergy', setting_dairy_allergy);
-  await prefs.setBool('Gluten_Allergy', setting_gluten_allergy);
   await prefs.setBool('Dark_Mode', setting_dark_mode);
-  await prefs.setBool('Hide_Dietary_Tags', setting_hide_dietary_tags);
 }
 
 final dateFormatter = DateFormat('dd/MM/yyyy');
@@ -69,7 +55,7 @@ DateTime DateTextController =
     DateTime.utc(date_time_now.year, date_time_now.month, date_time_now.day);
 
 var DateTextControllerFormatted =
-    dateFormatter.format(DateTextController) + " (Today)";
+    "${dateFormatter.format(DateTextController)} (Today)";
 
 PageController page_controller = PageController(
     initialPage: DateTextController.difference(START_DATE).inDays);
@@ -100,6 +86,7 @@ class LifecycleEventHandler extends WidgetsBindingObserver {
           await suspendingCallBack!();
         }
         break;
+      case AppLifecycleState.hidden:
     }
   }
 }
@@ -160,11 +147,11 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             return MaterialPageRoute(
                 settings: settings,
                 builder: (context) => MyHomePage(
-                    title: 'What\'s for Dino',
+                    title: 'What\'s for Koi',
                     ChangeDarkMode: Update_App_State));
         }
       },
-      title: 'What\'s for Dino',
+      title: 'What\'s for Koi',
       theme: ThemeData(
         useMaterial3: false,
         primarySwatch: Colors.teal,
@@ -200,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Center(child: Text("WARNING")),
+                title: const Center(child: Text("WARNING")),
                 content: Text(
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
@@ -211,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 actions: [
                   Center(
                     child: TextButton(
-                      child: Text("OK"),
+                      child: const Text("OK"),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -233,7 +220,7 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: Center(child: Text("WARNING")),
+                title: const Center(child: Text("WARNING")),
                 content: Text(
                     textAlign: TextAlign.center,
                     style: Theme.of(context)
@@ -244,7 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 actions: [
                   Center(
                     child: TextButton(
-                      child: Text("OK"),
+                      child: const Text("OK"),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -311,8 +298,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             DateTime.now();
 
                         DateTextController = DateTime.utc(datePicked.year, datePicked.month, datePicked.day);
-                        final TIME_DIFF = DateTextController.difference(START_DATE).inHours/24;
-                        print("Difference: $TIME_DIFF");
+                        final timeDiff = DateTextController.difference(START_DATE).inHours/24;
+                        print("Difference: $timeDiff");
                         old_page =
                             DateTextController.difference(START_DATE).inDays;
                         page_controller.jumpToPage(
@@ -329,19 +316,19 @@ class _MyHomePageState extends State<MyHomePage> {
             child: PageView.builder(
                 itemCount: FINAL_DATE.difference(START_DATE).inDays + 1,
                 controller: page_controller,
-                onPageChanged: (new_page) {
-                  if (new_page < old_page) {
-                    final new_date = DateTime(DateTextController.year,
+                onPageChanged: (newPage) {
+                  if (newPage < old_page) {
+                    final newDate = DateTime(DateTextController.year,
                         DateTextController.month, DateTextController.day - 1);
-                    DateTextController = DateTime.utc(new_date.year, new_date.month, new_date.day);
+                    DateTextController = DateTime.utc(newDate.year, newDate.month, newDate.day);
                   }
-                  if (new_page > old_page) {
-                    final new_date = DateTime(DateTextController.year,
+                  if (newPage > old_page) {
+                    final newDate = DateTime(DateTextController.year,
                         DateTextController.month, DateTextController.day + 1);
-                    DateTextController = DateTime.utc(new_date.year, new_date.month, new_date.day);
+                    DateTextController = DateTime.utc(newDate.year, newDate.month, newDate.day);
                   }
                   Format_Date();
-                  old_page = new_page;
+                  old_page = newPage;
                   setState(() {});
                 },
                 itemBuilder: (context, position) {
@@ -357,85 +344,55 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 // Calculates which day of the cycle the food should be based on the date
-Find_Food_List(int day_pos) {
+Find_Food_List(int dayPos) {
   int day = 0;
   int week = 0;
-  Week week_list = week_1_2023T2;
-  print("DAYS POS: $day_pos");
-  if (day_pos <= MID_DATE.difference(START_DATE).inDays) {
-    final days_diff = day_pos;
-    final days_mod = days_diff % 21;
-    week = ((((days_mod - (days_mod % 7)) / 7 + 1).toInt() + (FIRST_TERM_START_WEEK - 2)) % 3) + 1;
-    day = (days_mod % 7) + 1;
-    print("The term is 1 and the week is $week and the day is $day");
-    switch (week) {
-      case (1):
-        week_list = FIRST_TERM.Week_1;
-        // print("First Term Week 1");
-        break;
-      case (2):
-        week_list = FIRST_TERM.Week_2;
-        // print("First Term Week 2");
-        break;
-      case (3):
-        week_list = FIRST_TERM.Week_3;
-        // print("First Term Week 3");
-        break;
-      default:
-    }
-  } else {
-    final days_diff = day_pos - MID_DATE.difference(START_DATE).inDays - 1;
-    final days_mod = days_diff % 21;
-    week = ((((days_mod - (days_mod % 7)) / 7 + 1).toInt() + (SECOND_TERM_START_WEEK - 2)) % 3) + 1;
-    day = (days_mod % 7) + 1;
-    print("The term is 2 and the week is $week and the day is $day");
-    switch (week) {
-      case (1):
-        week_list = SECOND_TERM.Week_1;
-        // print("Second Term Week 1");
-        break;
-      case (2):
-        week_list = SECOND_TERM.Week_2;
-        // print("Second Term Week 2");
-        break;
-      case (3):
-        week_list = SECOND_TERM.Week_3;
-        // print("Second Term Week 3");
-        break;
-      default:
-    }
-  }
-  switch (day) {
+  Week weekList = week_1_2025T2;
+
+  final daysMod = dayPos % 21;
+  week = ((((daysMod - (daysMod % 7)) / 7 + 1).toInt() + (SECOND_TERM_START_WEEK - 2)) % 3) + 1;
+  day = (daysMod % 7) + 1;
+  print("The term is 2 and the week is $week and the day is $day");
+
+  switch (week) {
     case (1):
-      return week_list.Monday;
+      weekList = SECOND_TERM.Week_1;
+      // print("Second Term Week 1");
+      break;
     case (2):
-      return week_list.Tuesday;
+      weekList = SECOND_TERM.Week_2;
+      // print("Second Term Week 2");
+      break;
     case (3):
-      return week_list.Wednesday;
-    case (4):
-      return week_list.Thursday;
-    case (5):
-      return week_list.Friday;
-    case (6):
-      return week_list.Saturday;
-    case (7):
-      return week_list.Sunday;
+      weekList = SECOND_TERM.Week_3;
+      // print("Second Term Week 3");
+      break;
     default:
+  }
+
+  switch (day) {
+    case (1): return weekList.Monday;
+    case (2): return weekList.Tuesday;
+    case (3): return weekList.Wednesday;
+    case (4): return weekList.Thursday;
+    case (5): return weekList.Friday;
+    case (6): return weekList.Saturday;
+    case (7): return weekList.Sunday;
   }
 }
 
-List<Widget> FoodList(int day_pos, BuildContext context) {
+List<Widget> FoodList(int dayPos, BuildContext context) {
   ThemeData theme = Theme.of(context);
-  List<FoodItem> food_list = Find_Food_List(day_pos);
+  List<FoodItem> foodList = Find_Food_List(dayPos);
   var widgetList = <Widget>[];
 
   widgetList.add(const SizedBox(height: 10));
   widgetList.add(Center(
-      child: Text("Breakfast (7:30 am - 10 am)",
+      child: Text("Breakfast",
           style: theme.textTheme.titleMedium!
               .copyWith(fontWeight: FontWeight.w800, fontSize: 16.5))));
   widgetList.add(const SizedBox(height: 4.5));
-  for (var breakfastFood in food_list) {
+  for (var breakfastFood in foodList) {
     if (breakfastFood.breakfast == true &&
         Include_Food(breakfastFood) == true) {
       // Add space between items
@@ -444,29 +401,14 @@ List<Widget> FoodList(int day_pos, BuildContext context) {
       widgetList.add(FoodListItem(breakfastFood));
     }
   }
-  if ((day_pos % 7) == 5 || (day_pos % 7) == 6) {
-    widgetList.add(const SizedBox(height: 13));
-    widgetList.add(Center(
-        child: Text("Brunch (10 am - 12 pm)",
-            style: theme.textTheme.titleMedium!
-                .copyWith(fontWeight: FontWeight.w800, fontSize: 16.5))));
-    widgetList.add(const SizedBox(height: 4.5));
-    for (var brunchFood in food_list) {
-      if (brunchFood.brunch == true && Include_Food(brunchFood) == true) {
-        // Add space between items
-        widgetList.add(const SizedBox(height: 8.5));
-        // Add list item
-        widgetList.add(FoodListItem(brunchFood));
-      }
-    }
-  }
+
   widgetList.add(const SizedBox(height: 13));
   widgetList.add(Center(
-      child: Text("Lunch (12 pm - 2:15 pm)",
+      child: Text("Lunch",
           style: theme.textTheme.titleMedium!
               .copyWith(fontWeight: FontWeight.w800, fontSize: 16.5))));
   widgetList.add(const SizedBox(height: 4.5));
-  for (var lunchFood in food_list) {
+  for (var lunchFood in foodList) {
     if (lunchFood.lunch == true && Include_Food(lunchFood) == true) {
       // Add space between items
       if (lunchFood.subtitle == false) {
@@ -478,11 +420,11 @@ List<Widget> FoodList(int day_pos, BuildContext context) {
   }
   widgetList.add(const SizedBox(height: 13));
   widgetList.add(Center(
-      child: Text("Dinner (5 pm - 7:30 pm)",
+      child: Text("Dinner",
           style: theme.textTheme.titleMedium!
               .copyWith(fontWeight: FontWeight.w800, fontSize: 16.5))));
   widgetList.add(const SizedBox(height: 4.5));
-  for (var dinnerFood in food_list) {
+  for (var dinnerFood in foodList) {
     if (dinnerFood.dinner == true && Include_Food(dinnerFood) == true) {
       // Add space between items
       if (dinnerFood.subtitle == false) {
@@ -493,7 +435,7 @@ List<Widget> FoodList(int day_pos, BuildContext context) {
     }
   }
   widgetList.add(const SizedBox(height: 10));
-  for (var dessertFood in food_list) {
+  for (var dessertFood in foodList) {
     if (dessertFood.dessert == true && Include_Food(dessertFood) == true) {
       // Add space between items
       widgetList.add(const SizedBox(height: 14));
@@ -506,7 +448,7 @@ List<Widget> FoodList(int day_pos, BuildContext context) {
 }
 
 class FoodListItem extends StatelessWidget {
-  const FoodListItem(this.Food);
+  const FoodListItem(this.Food, {super.key});
   final FoodItem Food;
 
   @override
@@ -527,45 +469,9 @@ class FoodListItem extends StatelessWidget {
         Food.text,
       );
     } else {
-      return Text(
-        textAlign: TextAlign.center,
-        style: theme.textTheme.bodyMedium!.copyWith(fontSize: 13),
-        FoodCorrectText(Food),
-      );
+      // Return an empty widget (no visible output)
+      return const SizedBox.shrink();
     }
-  }
-}
-
-String FoodCorrectText(FoodItem Food) {
-  if (setting_hide_dietary_tags == true) {
-    return Food.text;
-  }
-  final food_text = Food.text;
-  final List<bool> food_info_bool = [
-    Food.dairy_free,
-    Food.gluten_free,
-    Food.low_gluten,
-    Food.veg
-  ];
-  final List<String> food_info_string = ["DF", "GF", "LG", "VG"];
-  bool comma_needed = false;
-  String food_info = "";
-
-  for (int i = 0; i < 4; i++) {
-    if (food_info_bool[i] == true) {
-      final food_info_item = food_info_string[i];
-      if (comma_needed == true) {
-        food_info = "$food_info, ";
-      }
-      food_info = "$food_info$food_info_item";
-      comma_needed = true;
-    }
-  }
-
-  if (comma_needed == true) {
-    return "$food_text ($food_info)";
-  } else {
-    return food_text;
   }
 }
 
@@ -575,12 +481,6 @@ bool Include_Food(FoodItem Food) {
     return include;
   }
   if (setting_veg == true && Food.veg == false) {
-    include = false;
-  } else if (setting_dairy_allergy == true && Food.dairy_free == false) {
-    include = false;
-  } else if (setting_gluten_allergy == true &&
-      Food.gluten_free == false &&
-      Food.low_gluten == false) {
     include = false;
   }
   return include;
@@ -641,28 +541,8 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              setting_hide_dietary_tags =
-                                  !setting_hide_dietary_tags;
-                              Update_settings();
-                            });
-                          },
-                          child: Row(
-                            children: [
-                              IgnorePointer(
-                                child: Checkbox(
-                                  value: setting_hide_dietary_tags,
-                                  onChanged: (bool? value) {},
-                                ),
-                              ),
-                              const Center(
-                                child: Text("Hide Dietary Tags"),
-                              ),
-                            ],
-                          ),
-                        ),
+                        const SizedBox(height: 48),
+
                         const Divider(),
                         const SizedBox(height: 10),
                         const Text("Dietary Requirements:"),
@@ -690,51 +570,9 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              setting_dairy_allergy = !setting_dairy_allergy;
-                              Update_settings();
-                            });
-                          },
-                          child: Row(
-                            children: [
-                              IgnorePointer(
-                                child: Checkbox(
-                                  value: setting_dairy_allergy,
-                                  onChanged: (bool? value) {},
-                                ),
-                              ),
-                              const Expanded(
-                                child: Text(
-                                    "Dairy Allergy (BETA - excludes non DF foods)"),
-                              ),
-                            ],
-                          ),
-                        ),
+                        const SizedBox(height: 48),
                         const SizedBox(height: 10),
-                        InkWell(
-                          onTap: () {
-                            setState(() {
-                              setting_gluten_allergy = !setting_gluten_allergy;
-                              Update_settings();
-                            });
-                          },
-                          child: Row(
-                            children: [
-                              IgnorePointer(
-                                child: Checkbox(
-                                  value: setting_gluten_allergy,
-                                  onChanged: (bool? value) {},
-                                ),
-                              ),
-                              Expanded(
-                                child: Text(
-                                    "Gluten Allergy (BETA - excludes non GF & LG foods)"),
-                              ),
-                            ],
-                          ),
-                        ),
+                        const SizedBox(height: 48),
                         const Divider(),
                         const SizedBox(height: 10),
                         RichText(
@@ -771,7 +609,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         const SizedBox(height: 10)
                       ]))),
           Container(
-              margin: EdgeInsets.all(8.0),
+              margin: const EdgeInsets.all(8.0),
               width: double
                   .infinity, // This makes the container take up all available horizontal space
               child: ElevatedButton(
@@ -789,7 +627,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     await launchUrl(url);
                   }
                 },
-                child: Text('Feedback Form for Food',
+                child: const Text('Feedback Form for Food',
                     style:
                         TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
               )),

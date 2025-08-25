@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class CustomPrompt extends StatelessWidget {
   final VoidCallback onClose;
 
-  CustomPrompt({required this.onClose});
+  const CustomPrompt({super.key, required this.onClose});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CustomPrompt extends StatelessWidget {
       right: 0,
       bottom: 0,
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         color: Colors.grey[800],
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -24,12 +24,12 @@ class CustomPrompt extends StatelessWidget {
               Platform.isIOS
                   ? 'To install, tap Share, then "Add to Home Screen"'
                   : 'Hello',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: const TextStyle(color: Colors.white, fontSize: 16),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextButton(
               onPressed: onClose,
-              child: Text('Close', style: TextStyle(color: Colors.white)),
+              child: const Text('Close', style: TextStyle(color: Colors.white)),
             ),
           ],
         ),
