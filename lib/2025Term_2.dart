@@ -76,7 +76,7 @@ final saturdayW1 = [
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
     FoodItem(text: 'Classic chicken chow Mein noodles', lunch: true),
-    FoodItem(text: 'Baked Spanakopita with spinach & ricotta cheese', lunch: true, veg: true),
+    FoodItem(text: 'Spanakopita with spinach & ricotta cheese', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
     FoodItem(text: 'CURRY NIGHT :', title: true, dinner: true),
@@ -233,7 +233,7 @@ final tuesdayW3 = [
     FoodItem(text: 'NACHO DAY :', title: true, lunch: true, override: true),
     FoodItem(text: 'Tortilla Chips Bowl', override: true, lunch: true),
     FoodItem(text: 'Variety of filling', override: true, lunch: true),
-    FoodItem(text: 'Ground beef minced, Pulled chicken, Mexican plant-based meat', lunch: true),
+    FoodItem(text: 'Ground beef minced, Pulled chicken, Mexican plant-based meat', override: true, lunch: true),
     // Dinner
     FoodItem(text: 'Oyster chicken stir-fry', dinner: true),
     FoodItem(text: 'Dry potato curry with Tempeh', dinner: true, veg: true),
@@ -249,7 +249,7 @@ final wednesdayW3 = [
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
     FoodItem(text: 'Herb & butter sauce schnitzel', dinner: true),
-    FoodItem(text: 'Miso Plantbase Schnitzels', dinner: true, veg: true),
+    FoodItem(text: 'Miso plant-base Schnitzels', dinner: true, veg: true),
     // Dessert
     FoodItem(text: 'Toffee Trifle', dessert: true),
 ];

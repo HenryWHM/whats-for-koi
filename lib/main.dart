@@ -82,11 +82,11 @@ class LifecycleEventHandler extends WidgetsBindingObserver {
       case AppLifecycleState.inactive:
       case AppLifecycleState.paused:
       case AppLifecycleState.detached:
+      case AppLifecycleState.hidden:
         if (suspendingCallBack != null) {
           await suspendingCallBack!();
         }
         break;
-      case AppLifecycleState.hidden:
     }
   }
 }
@@ -469,8 +469,11 @@ class FoodListItem extends StatelessWidget {
         Food.text,
       );
     } else {
-      // Return an empty widget (no visible output)
-      return const SizedBox.shrink();
+      return Text(
+        Food.text,
+        textAlign: TextAlign.center,
+        style: theme.textTheme.bodyMedium!.copyWith(fontSize: 14.5, fontWeight: FontWeight.w400),
+      );
     }
   }
 }
@@ -593,10 +596,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                     fontWeight: FontWeight.bold),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async {
-                                    final url = Uri.https(
-                                        'www.facebook.com',
-                                        '/profile.php',
-                                        {'id': '100090069107079'});
+                                    final url = Uri.parse('https://www.facebook.com/share/19gMPYcicz/');
                                     if (await canLaunchUrl(url)) {
                                       await launchUrl(url);
                                     }
