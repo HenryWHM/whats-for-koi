@@ -1,4 +1,4 @@
-package com.whatsforkoi.whats_for_koi
+package com.whatsforkoi.app
 
 import io.flutter.embedding.android.FlutterActivity
 
