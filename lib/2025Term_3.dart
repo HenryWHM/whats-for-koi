@@ -37,6 +37,7 @@ final wednesdayW1 = [
     // Lunch
     FoodItem(text: 'Poke Bowl:', title: true, lunch: true, override: true),
     FoodItem(text: 'Teriyaki chicken or Japanese Garlic Steak or Soy-Glazed Agedashi Tofu with Brown Rice', override: true, lunch: true),
+    FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
     FoodItem(text: 'Beef in Honey Pepper Sauce', dinner: true),
     FoodItem(text: 'Chickpeas Eggplant Tagine', dinner: true, veg: true),
@@ -66,6 +67,7 @@ final fridayW1 = [
     FoodItem(text: 'Sweet & Spicy Korean Chicken Wings with Pickles', lunch: true),
     FoodItem(text: 'Roasted Tofu with Chickpea Satay Sauce, Buttermilk', lunch: true, veg: true),
     FoodItem(text: 'Macaroni and Cheese', lunch: true),
+    FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
     FoodItem(text: 'Southern Curry Chicken Biryani', dinner: true),
     FoodItem(text: 'Tofu & Egg Tteokbokki', dinner: true, veg: true),
@@ -108,14 +110,15 @@ final Week week_1_2025T2 = Week(mondayW1, tuesdayW1, wednesdayW1, thursdayW1, fr
 final mondayW2 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
+    FoodItem(text: 'Chicken noodle soup', breakfast: true),
     // Lunch
-    FoodItem(text: 'Chicken and Mushroom Pie', lunch: true),
+    FoodItem(text: 'Chicken Camembert Pie', lunch: true),
     FoodItem(text: 'Creamy Vegetarian Pie', lunch: true, veg: true),
     FoodItem(text: 'Mashed potatoes and gravy', lunch: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Parmesan panko chicken', dinner: true),
-    FoodItem(text: 'Ginger eggplant & Tofu, potato noodle stir-fry', dinner: true, veg: true),
+    FoodItem(text: 'Sang Tung chicken', dinner: true),
+    FoodItem(text: 'Vegetable Dumplings in Soy Glaze', dinner: true, veg: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
@@ -124,28 +127,29 @@ final tuesdayW2 = [
     FoodItem(text: 'Continental breakfast', breakfast: true),
     FoodItem(text: 'Fried rice', breakfast: true),
     // Lunch
-    FoodItem(text: 'Creamy mushroom soup', lunch: true),
-    FoodItem(text: 'Macca\'s Burger:', title: true, lunch: true, override: true),
-    FoodItem(text: 'Choice of Grilled Cheese Beef Pattie, Crumbed Chicken Scallop, Soy Protein Patties', lunch: true, override: true),
-    FoodItem(text: 'Serve with French fries, salad, condiments', lunch: true, override: true),
+    FoodItem(text: 'Yaki Soba Style Chicken Noodle Stir-Fry', lunch: true),
+    FoodItem(text: 'Tempeh & Zucchini Potato Noodles', lunch: true, veg: true),
+    FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Chicken dumplings with garlic & soy glaze', dinner: true),
-    FoodItem(text: 'Ratatouille pasta baked with vegan protein', dinner: true, veg: true),
+    FoodItem(text: 'Parmesan Panko Crusted Chicken', dinner: true),
+    FoodItem(text: 'Mamak Style Fish Curry', dinner: true),
+    FoodItem(text: 'Mapo Tofu', dinner: true, veg: true),
     FoodItem(text: 'Salad bar', dinner: true),
     // Dessert
-    FoodItem(text: 'Bread & butter pudding', dessert: true),
+    FoodItem(text: 'Kunafa Cream Baked', dessert: true),
 ];
 
 final wednesdayW2 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'Honey Harissa chicken with herb yoghurt', lunch: true),
-    FoodItem(text: 'Lentil & eggplant Moussaka', lunch: true, veg: true),
+    FoodItem(text: 'BURGER', title: true, lunch: true, override: true),
+    FoodItem(text: 'Choice of Grilled Cheese Beef Pattie, Crumbed Chicken Scallop, Soy Protein Patties', lunch: true, override: true),
+    FoodItem(text: 'Served with French Fries, Crinkle Pickle, Burger Sauce', lunch: true, override: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Spiced Gochujang fish baked', dinner: true),
-    FoodItem(text: 'Cheesy corn & spiral pasta Casserole with soy protein', dinner: true, veg: true),
+    FoodItem(text: 'Korean Beef with Shallot and Sesame', dinner: true),
+    FoodItem(text: 'Chickpeas and Onion Bhaji', dinner: true, veg: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
@@ -154,12 +158,13 @@ final thursdayW2 = [
     FoodItem(text: 'Continental breakfast', breakfast: true),
     FoodItem(text: 'Fried rice', breakfast: true),
     // Lunch
-    FoodItem(text: 'Meatball penne pasta bake', lunch: true),
-    FoodItem(text: 'Zucchini Cake with Katsu Curry', lunch: true, veg: true),
+    FoodItem(text: 'Basil and Soya Minced Chicken', lunch: true),
+    FoodItem(text: 'Drunken Herb and Tofu', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Mustard Volute Chicken Supreme', dinner: true),
-    FoodItem(text: 'Chickpea & lentil Shepherd\'s pie', dinner: true, veg: true),
+    FoodItem(text: 'Massaman Chicken Curry', dinner: true),
+    FoodItem(text: 'Khana Palak Paneer', dinner: true, veg: true),
+    FoodItem(text: 'Served with Pita Bread, Raita Sauce, Saffron Basmati Rice', dinner: true, override: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
@@ -167,13 +172,13 @@ final fridayW2 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'TACO DAY', title: true, lunch: true, override: true),
-    FoodItem(text: 'Fish tempura, Pulled Chicken, Tofu Fajita', override: true, lunch: true),
-    FoodItem(text: 'Cucumber, Corn & Tomato Salsa, Guacamole, Cheese & Sour Cream', override: true, lunch: true),
+    FoodItem(text: 'TACOS', title: true, lunch: true, override: true),
+    FoodItem(text: 'Taco Tortilla with', lunch: true),
+    FoodItem(text: 'Fish Tempura or Spiced Pulled Chicken or Chickpea Falafe', override: true, lunch: true),
+    FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Kari chicken drumsticks & potato curry', dinner: true), // "Kari" interpreted as Curry
-    FoodItem(text: 'Tofu & vegetable green curry', dinner: true, veg: true),
-    FoodItem(text: 'Crispy Poppadums, Mango Chutney, Raita Sauce', dinner: true),
+    FoodItem(text: 'Cheddar Cheese Sauce Chicken Schnitzel', dinner: true),
+    FoodItem(text: 'Creme Garlic Parmesan Plantbase Schnitzel', dinner: true, veg: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
@@ -181,31 +186,30 @@ final saturdayW2 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'Chicken Schnitzel with Mustard Cream Sauce', lunch: true),
-    FoodItem(text: 'Sweet potato frittata', lunch: true, veg: true),
+    FoodItem(text: 'Spicy Korean Chicken Karaage', lunch: true),
+    FoodItem(text: 'Dry Masala Tofu with Pumpkin', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'PASTA NIGHT:', title: true, dinner: true),
-    FoodItem(text: 'Classic lamb ragu', dinner: true),
-    FoodItem(text: 'Spinach & cheese tortellini in pesto sauce', dinner: true, veg: true),
+    FoodItem(text: 'PASTA NIGHT', title: true, dinner: true),
+    FoodItem(text: 'Chilli Tuscan Chicken', dinner: true),
+    FoodItem(text: 'Kale, Spinach & Ricotta Basil Pesto', dinner: true, veg: true),
+    FoodItem(text: 'Served with Spaghetti, Roasted Vegetable and Garlic Bread', dinner: true, override: true),
     FoodItem(text: 'Salad bar', dinner: true),
-    // Dessert
-    FoodItem(text: 'Coconut Mochi Cake', dessert: true),
 ];
 
 final sundayW2 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'Roasted BBQ Provencale chicken', lunch: true),
-    FoodItem(text: 'Vegan Tofu sukiyaki', lunch: true, veg: true),
+    FoodItem(text: 'Tandoori Chicken with Green Chutney', lunch: true),
+    FoodItem(text: 'Tofu in Miso and Mushroom Sauce', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'STONE BAKED PIZZA', title: true, dinner: true, override: true),
-    FoodItem(text: 'Margarita', dinner: true, veg: true),
-    FoodItem(text: 'Meat Lover', dinner: true),
-    FoodItem(text: 'BBQ Chicken Pizza', dinner: true),
+    FoodItem(text: 'Roasted Turkey Breast', dinner: true, veg: true),
+    FoodItem(text: 'Baked Vegan Meatloaf', dinner: true),
     FoodItem(text: 'Salad bar', dinner: true),
+    // Dessert
+    FoodItem(text: 'Custard Cream Chuox', dessert: true),
 ];
 
 final Week week_2_2025T2 = Week(mondayW2, tuesdayW2, wednesdayW2, thursdayW2, fridayW2, saturdayW2, sundayW2);
