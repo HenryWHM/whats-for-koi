@@ -104,7 +104,7 @@ final sundayW1 = [
     FoodItem(text: 'Custard & Berry Waffle', dessert: true),
 ];
 
-final Week week_1_2025T2 = Week(mondayW1, tuesdayW1, wednesdayW1, thursdayW1, fridayW1, saturdayW1, sundayW1);
+final Week week_1_2025T3 = Week(mondayW1, tuesdayW1, wednesdayW1, thursdayW1, fridayW1, saturdayW1, sundayW1);
 
 // GH WEEK 2 for Semester 2 (from previous request, adjusted for S2 naming)
 final mondayW2 = [
@@ -212,20 +212,22 @@ final sundayW2 = [
     FoodItem(text: 'Custard Cream Chuox', dessert: true),
 ];
 
-final Week week_2_2025T2 = Week(mondayW2, tuesdayW2, wednesdayW2, thursdayW2, fridayW2, saturdayW2, sundayW2);
+final Week week_2_2025T3 = Week(mondayW2, tuesdayW2, wednesdayW2, thursdayW2, fridayW2, saturdayW2, sundayW2);
 
 // GH WEEK 3 for Semester 2 (newly processed)
 final mondayW3 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
+    FoodItem(text: 'Chicken noodle soup', breakfast: true),
     // Lunch
-    FoodItem(text: 'Moroccan lamb pie', lunch: true),
+    FoodItem(text: 'Aussie Meat pie', lunch: true),
     FoodItem(text: 'Spinach Ricotta Roll', lunch: true, veg: true),
     FoodItem(text: 'Mashed potatoes and gravy', lunch: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Mediterranean Roasted Chicken', dinner: true),
-    FoodItem(text: 'Tofu Bibimbap baked rice with egg, bean sprout, mushrooms & broccoli', dinner: true, veg: true),
+    FoodItem(text: 'Grilled Chicken in Plum Sauce', dinner: true),
+    FoodItem(text: 'Beef Picadillo with Jamaican Rice & Beans', dinner: true),
+    FoodItem(text: 'Sweet & Sour Soy Protein Meat Stir-Fry', dinner: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
@@ -234,28 +236,28 @@ final tuesdayW3 = [
     FoodItem(text: 'Continental breakfast', breakfast: true),
     FoodItem(text: 'Fried rice', breakfast: true),
     // Lunch
-    FoodItem(text: 'NACHO DAY :', title: true, lunch: true, override: true),
-    FoodItem(text: 'Tortilla Chips Bowl', override: true, lunch: true),
-    FoodItem(text: 'Variety of filling', override: true, lunch: true),
-    FoodItem(text: 'Ground beef minced, Pulled chicken, Mexican plant-based meat', override: true, lunch: true),
+    FoodItem(text: 'WRAP/SOFT ROLL', title: true, lunch: true, override: true),
+    FoodItem(text: 'Sliced Pepper Steak or Chicken Shawarma or Moroccan Tofu', override: true, lunch: true),
+    FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Oyster chicken stir-fry', dinner: true),
-    FoodItem(text: 'Dry potato curry with Tempeh', dinner: true, veg: true),
+    FoodItem(text: 'Chilli Cumin Lamb Dry Noodle and Asian Greens', dinner: true),
+    FoodItem(text: 'Tofu Bibimbap Baked Rice', dinner: true, veg: true),
     FoodItem(text: 'Salad bar', dinner: true),
+    // Dessert
+    FoodItem(text: 'Hokey Pokey Eton Mess', dessert: true),
 ];
 
 final wednesdayW3 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'Japanese chicken Katsu curry with Togradashi rice', lunch: true),
-    FoodItem(text: 'Egg pakora & vegetables with mango sauce', lunch: true, veg: true),
+    FoodItem(text: 'Chicken Rissoles in Napoli Sauce and Potato Mashed', lunch: true),
+    FoodItem(text: 'Plantbase Meatballs', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'Herb & butter sauce schnitzel', dinner: true),
-    FoodItem(text: 'Miso plant-base Schnitzels', dinner: true, veg: true),
-    // Dessert
-    FoodItem(text: 'Toffee Trifle', dessert: true),
+    FoodItem(text: 'Moroccan Chicken', dinner: true),
+    FoodItem(text: 'Chickpeas Falafel in Sultana Couscous', dinner: true, veg: true),
+     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
 final thursdayW3 = [
@@ -263,14 +265,14 @@ final thursdayW3 = [
     FoodItem(text: 'Continental breakfast', breakfast: true),
     FoodItem(text: 'Fried rice', breakfast: true),
     // Lunch
-    FoodItem(text: 'Macaroni Soup', lunch: true),
-    FoodItem(text: 'Peri Peri spiced roasted chicken', lunch: true),
-    FoodItem(text: 'Aloo Gobi with tofu & cauliflower', lunch: true, veg: true),
+    FoodItem(text: 'LOADED FRIES', title: true, lunch: true),
+    FoodItem(text: 'Served with Chilli Beef & Beans or BBQ Grilled Chicken or Mixed Spiced Beans', lunch: true, override: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'PASTA NIGHT:', title: true, dinner: true),
-    FoodItem(text: 'Chicken spiced Alfredo', dinner: true),
-    FoodItem(text: 'Mexican beans & sweet potato Enchiladas', dinner: true, veg: true),
+    FoodItem(text: 'STONE BAKED PIZZA', title: true, dinner: true),
+    FoodItem(text: 'Margherita', dinner: true, veg: true),
+    FoodItem(text: 'Meat Lover', dinner: true),
+    FoodItem(text: 'BBQ Chicken', dinner: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
@@ -278,64 +280,46 @@ final fridayW3 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'SANDWICH DAY:', title: true, lunch: true, override: true),
-    FoodItem(text: 'Harrissa lamb or Honey & soy chicken tenderloin, Chickpea falafel', override: true, lunch: true), // soy for chicken tenderloin
+    FoodItem(text: 'Chicken Mee Noodle Stir-Fried', lunch: true),
+    FoodItem(text: 'Ricotta and Tofu Broccoli and Rizoni Stuffed Pepper', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'VOTE MENU', title: true, dinner: true),
-    FoodItem(text: 'Surprise and Delight - Vote for your dinner', subtitle: true, dinner: true),
-    FoodItem(text: 'Options with the most votes WIN!', subtitle: true, dinner: true),
-    // The options for dinner as per example format, not explicitly served but are part of the "menu"
-    // FoodItem(text: '1.Masala Lamb Chop with Mint Sauce.  or  Lamb Skewer with Raita Yoghurt', dinner: true, subtitle:true), // Following example format, but this is complex to model accurately as a *served* item
-    // FoodItem(text: '2. Texas BBQ Wingettes or Spicy Korean Chicken Karaage', dinner: true, subtitle:true),
-    // FoodItem(text: '3. Morrocan Cauliflower Steak with protein meat & Pumpkin Puree\' or Chicken Plant Base Parmigiana', dinner: true, subtitle:true),
-    // Sticking to example which did list specific food items based on a past vote, which is not known here. The user example for FridayW3 shows "Options with most votes WIN!"
-    // For now, I will list sides as they are definitely served. The example 2025Sem1 fridayW3 listed the *actual* options rather than "options win". Re-evaluating.
-    // The user's original example 2025Sem_1.txt did show:
-    // FoodItem(text: 'Surprise and Delight - Vote for your dinner', dinner: true),
-    // FoodItem(text: 'Options with the most votes WIN!', dinner: true),
-    // FoodItem(text: '1.Masala Lamb Chop with Mint Sauce.  or  Lamb Skewer with Raita Yoghurt', dinner: true),
-    // FoodItem(text: '2. Texas BBQ Wingettes or Spicy Korean Chicken Karaage', dinner: true),
-    // FoodItem(text: '3. Morrocan Cauliflower Steak with protein meat & Pumpkin Puree\' or Chicken Plant Base Parmigiana', dinner: true),
-    // So, I should list the options.
-    FoodItem(text: 'Selection of Lemon peper roasted potato, assorted vegetables & Steamed jasmine rice', dinner: true),
-    FoodItem(text: 'Green power salad with avocado, spinach, green beans, celery, kale, broccoli, snow pea sprouts, pumpkin seed', dinner: true),
-    FoodItem(text: 'Butternut squash salad with chickpea, onion, coriander, spinach, fetta & cranberry', dinner: true),
+    FoodItem(text: 'Mongolian Chicken with Chilli and Shallots', lunch: true),
+    FoodItem(text: 'Tofu Soba Noodle with Soy Ginger', lunch: true, veg: true),
+    FoodItem(text: 'Salad bar', lunch: true),
     // Dessert
-    FoodItem(text: 'Sweet pumpkin cake', dessert: true),
+    FoodItem(text: 'Mango and Friends Shrikhand', dessert: true),
 ];
 
 final saturdayW3 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'Garlic & butter chicken Kiev', lunch: true),
-    FoodItem(text: 'Chickpea Onion Bhaji with Turmuric Dip', lunch: true, veg: true),
+    FoodItem(text: 'Classic Chicken Parmigiana', lunch: true),
+    FoodItem(text: 'Plantbase Schnitzel Parmigiana', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'CURRY NIGHT :', title: true, dinner: true),
-    FoodItem(text: 'Malay chicken drumstick curry', dinner: true),
-    FoodItem(text: 'Aubergine Sri-Lankan coconut dalh', dinner: true, veg: true),
+    FoodItem(text: 'CURRY NIGHT', title: true, dinner: true),
+    FoodItem(text: 'Chicken Red Curry', dinner: true),
+    FoodItem(text: 'Tempeh Chili & Lime Curry', dinner: true, veg: true),
+    FoodItem(text: 'Served with Pita bread, Raita, Basmati Rice', dinner: true, override: true),
     FoodItem(text: 'Salad bar', dinner: true),
-    // Dessert
-    FoodItem(text: 'Chocolate mousse & berries', dessert: true),
 ];
 
 final sundayW3 = [
     // Breakfast
     FoodItem(text: 'Continental breakfast', breakfast: true),
     // Lunch
-    FoodItem(text: 'Herb turmeric chicken supreme', lunch: true),
-    FoodItem(text: 'Hoi Sin Tempeh, green beans & vegetables stir-fry', lunch: true, veg: true),
+    FoodItem(text: 'Rosemary & Sage Roasted Chicken', lunch: true),
+    FoodItem(text: 'Hoi Sin Tempeh, Green Beans and Vegetable Stir-Fry', lunch: true, veg: true),
     FoodItem(text: 'Salad bar', lunch: true),
     // Dinner
-    FoodItem(text: 'STONE BAKED PIZZA', title: true, dinner: true, override: true),
-    FoodItem(text: 'Margarita', dinner: true, veg: true),
-    FoodItem(text: 'Meat Lover', dinner: true),
-    FoodItem(text: 'BBQ Chicken Pizza', dinner: true),
+    FoodItem(text: 'PASTA NIGHT', title: true, dinner: true),
+    FoodItem(text: 'Tom Yum Herb Chicken Pasta', dinner: true),
+    FoodItem(text: 'Mexican Spiced Bean & Sweet Potato Enchiladas', dinner: true, veg: true),
     FoodItem(text: 'Salad bar', dinner: true),
 ];
 
-final Week week_3_2025T2 = Week(mondayW3, tuesdayW3, wednesdayW3, thursdayW3, fridayW3, saturdayW3, sundayW3);
+final Week week_3_2025T3 = Week(mondayW3, tuesdayW3, wednesdayW3, thursdayW3, fridayW3, saturdayW3, sundayW3);
 
-final Term term_2_2025 = Term(week_1_2025T2, week_2_2025T2, week_3_2025T2);
+final Term term_3_2025 = Term(week_1_2025T3, week_2_2025T3, week_3_2025T3);
